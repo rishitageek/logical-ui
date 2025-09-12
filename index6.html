@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>3D Portfolio</title>
+        <link rel="stylesheet" href="style.css" />
+        <style>
+            :root {
+                --hue: 0deg;
+            }
+
+            body {
+                margin: 0;
+                min-height: 100vh;
+                background: linear-gradient(120deg, hsl(200, 70%, 40%), hsl(260, 70%, 40%));
+                animation: hue 20s linear infinite;
+                display: grid;
+                place-items: center;
+            }
+
+            /* animate background hue */
+            @keyframes hue {
+                to {
+                    filter: hue-rotate(360deg);
+                }
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                perspective: 1000px;
+                padding: 2rem;
+            }
+
+            /* 3D card */
+            .card {
+                display: block;
+                position: relative;
+                transform-style: preserve-3d;
+                transition: transform 0.4s;
+            }
+            .card:hover {
+                transform: rotateX(12deg) rotateY(12deg) scale(1.05);
+            }
+            .card::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent);
+                transition: opacity 0.4s;
+                opacity: 0;
+            }
+            .card:hover::after {
+                opacity: 1;
+            }
+
+            /* Modal (pure CSS) */
+            .modal {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.8);
+                display: grid;
+                place-items: center;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.4s;
+            }
+            .modal:target {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .modal-content {
+                background: #fff;
+                padding: 2rem;
+                max-width: 800px;
+                max-height: 90vh;
+                overflow-y: auto;
+                border-radius: 1rem;
+            }
+            .close {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                color: #fff;
+                text-decoration: none;
+                font-size: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="gallery">
+            <a href="#p1" class="card">
+                <figure>
+                    <img
+                        src="https://www.shutterstock.com/image-vector/vector-cute-baby-panda-cartoon-600nw-2427356853.jpg"
+                        alt="Project 1"
+                    />
+                    <figcaption>Project One</figcaption>
+                </figure>
+            </a>
+            <!-- repeat for more cards -->
+        </main>
+
+        <!-- Modal -->
+        <div class="modal" id="p1">
+            <a href="#" class="close">×</a>
+            <div class="modal-content">
+                <h2>Project One Details</h2>
+                <p>Describe your project here…</p>
+                <img
+                    src="https://www.shutterstock.com/image-vector/vector-cute-baby-panda-cartoon-600nw-2427356853.jpg"
+                    alt=""
+                />
+            </div>
+        </div>
+    </body>
+</html>

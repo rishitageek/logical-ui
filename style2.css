@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+:root {
+    --blue: #2a73ff;
+    --dark: #161414;
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --gray: #8a8a8a;
+}
+.form-wp {
+    display: flex;
+    gap: 62px;
+}
+.form-section {
+    /* max-width: 1440px; */
+    /* margin: 100px auto; */
+    /* padding-top: 66px; */
+    /* overflow: hidden; */
+    position: relative;
+}
+.form {
+    flex: 1;
+    width: 628px;
+    background: var(--blue);
+    padding: 48px;
+    border-radius: 8px;
+    margin-top: 66px;
+    min-height: 695px;
+    margin-bottom: -50px;
+}
+
+.form-content {
+    flex: 1;
+    margin-top: 80px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    gap: 15px;
+}
+
+.form input,
+.form textarea,
+.form select {
+    width: 100%;
+    height: 50px;
+    padding: 12px 13px;
+    border-radius: 4px;
+    border: none;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+button {
+    height: 52px;
+    background-color: #161414;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    border: none;
+}
+.form h3 {
+    margin-bottom: 16px;
+    font-family: Poppins;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 140%;
+    color: #fff;
+}
+
+.form p {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 32px;
+}
+.form-content h2 {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: 0px;
+    margin-bottom: 20px;
+}
+.form-content p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0px;
+    margin-bottom: 28px;
+    color: #8a8a8a;
+}
+.learn-more-btn {
+    width: 150px;
+    height: 46px;
+    border-radius: 4px;
+    display: inline-flex;
+    background: var(--blue);
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0px;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    text-decoration: none;
+}
+.img-wp {
+    /* margin-top: 15px; */
+    /* position: absolute; */
+    bottom: 53px;
+}
+
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    height: 290px;
+    background: linear-gradient(180deg, #528dff 0%, #2a73ff 33.06%, #0041be 100%);
+    filter: blur(80px);
+    border-radius: 0;
+    z-index: -1;
+    opacity: 0.4;
+}
+.overlay::before {
+    content: "";
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    width: 450px;
+    height: 285px;
+    background: linear-gradient(180deg, #528dff 0%, #2a73ff 33.06%, #0041be 100%);
+    filter: blur(200px);
+    border-radius: 0;
+    z-index: -1;
+    opacity: 0.9;
+}
+img {
+    display: flex;
+}
+textarea {
+    height: 102px !important;
+    resize: none;
+}
+section {
+    height: 150px;
+    background: #000;
+}
+/* section.second-div {
+    margin-top: -53px;
+} */
+@media (max-width: 1299px) {
+    img {
+        width: 270px;
+        height: auto;
+    }
+}
+@media (max-width: 1199px) {
+    .form-wp {
+        display: flex;
+        gap: 30px;
+    }
+    .form {
+        width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 767px) {
+    .form-wp {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+    .form {
+        padding: 15px;
+    }
+    .form-content {
+        margin-bottom: 0;
+        margin-top: 30px;
+    }
+    .form {
+        margin-top: -20px;
+        position: relative;
+        z-index: 111;
+    }
+
+    .form-content h2 {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: 0px;
+        margin-bottom: 16px;
+    }
+    .learn-more-btn {
+        width: 120px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .img-wp {
+        position: unset;
+        display: flex;
+        justify-content: center;
+    }
+    img {
+        width: 350px;
+    }
+    .form-content::before {
+        display: none;
+    }
+    .form-content::after {
+        bottom: -80px;
+        right: -20px;
+        width: 690px;
+        height: 225px;
+        left: -152px;
+        filter: blur(60px);
+        z-index: -1;
+        opacity: 0.9;
+        background: linear-gradient(180deg, #528dff 0%, #2a73ff 33.06%, #0041be 100%);
+    }
+    .form h3 {
+        font-size: 28px;
+    }
+    .form p {
+        margin-bottom: 15px;
+    }
+}
