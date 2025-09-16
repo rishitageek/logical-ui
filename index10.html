@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pure CSS Sliding Puzzle Layout</title>
+        <style>
+            :root {
+                --tiles: 4; /* number of tiles per side (4x4) */
+                --gap: 4px; /* gap between tiles */
+            }
+
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: #222;
+            }
+
+            .puzzle {
+                width: min(90vw, 90vh);
+                aspect-ratio: 1/1;
+                display: grid;
+                grid-template-columns: repeat(var(--tiles), 1fr);
+                grid-template-rows: repeat(var(--tiles), 1fr);
+                gap: var(--gap);
+                border: 8px solid #fff;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .tile {
+                background-image: url("https://picsum.photos/800"); /* your image */
+                background-size: calc(var(--tiles) * 100%) calc(var(--tiles) * 100%);
+                transition: transform 0.2s;
+            }
+
+            /* Position each tile by shifting the background */
+            /* 4x4 example */
+            /* Row 1 */
+            .tile:nth-child(1) {
+                background-position: 0% 0%;
+            }
+            .tile:nth-child(2) {
+                background-position: 33.33% 0%;
+            }
+            .tile:nth-child(3) {
+                background-position: 66.66% 0%;
+            }
+            .tile:nth-child(4) {
+                background-position: 100% 0%;
+            }
+            /* Row 2 */
+            .tile:nth-child(5) {
+                background-position: 0% 33.33%;
+            }
+            .tile:nth-child(6) {
+                background-position: 33.33% 33.33%;
+            }
+            .tile:nth-child(7) {
+                background-position: 66.66% 33.33%;
+            }
+            .tile:nth-child(8) {
+                background-position: 100% 33.33%;
+            }
+            /* Row 3 */
+            .tile:nth-child(9) {
+                background-position: 0% 66.66%;
+            }
+            .tile:nth-child(10) {
+                background-position: 33.33% 66.66%;
+            }
+            .tile:nth-child(11) {
+                background-position: 66.66% 66.66%;
+            }
+            .tile:nth-child(12) {
+                background-position: 100% 66.66%;
+            }
+            /* Row 4 */
+            .tile:nth-child(13) {
+                background-position: 0% 100%;
+            }
+            .tile:nth-child(14) {
+                background-position: 33.33% 100%;
+            }
+            .tile:nth-child(15) {
+                background-position: 66.66% 100%;
+            }
+            .tile:nth-child(16) {
+                background-position: 100% 100%;
+            }
+
+            /* Hover effect to mimic interactivity */
+            .tile:hover {
+                transform: scale(1.05);
+                z-index: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="puzzle">
+            <!-- 16 tiles for a 4x4 puzzle -->
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+    </body>
+</html>

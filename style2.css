@@ -19,6 +19,7 @@
 .form-wp {
     display: flex;
     gap: 62px;
+    align-items: flex-end;
 }
 .form-section {
     /* max-width: 1440px; */
@@ -34,14 +35,14 @@
     padding: 48px;
     border-radius: 8px;
     margin-top: 66px;
-    min-height: 695px;
+    /* min-height: 695px; */
+    height: 100%;
     margin-bottom: -50px;
 }
 
 .form-content {
     flex: 1;
     margin-top: 80px;
-    position: relative;
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
@@ -129,7 +130,14 @@ button {
     /* position: absolute; */
     bottom: 53px;
 }
-
+.overlay {
+    overflow: hidden;
+    position: absolute;
+    inset: auto 0 0 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 .overlay::after {
     content: "";
     position: absolute;
@@ -160,6 +168,9 @@ button {
 }
 img {
     display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 378px;
 }
 textarea {
     height: 102px !important;
@@ -172,20 +183,21 @@ section {
 /* section.second-div {
     margin-top: -53px;
 } */
-@media (max-width: 1299px) {
+/* @media (max-width: 1299px) {
     img {
         width: 270px;
         height: auto;
     }
-}
+} */
 @media (max-width: 1199px) {
     .form-wp {
         display: flex;
-        gap: 30px;
+        gap: 15px;
     }
     .form {
         width: 100%;
         height: auto;
+        padding: 25px;
     }
 }
 @media (max-width: 767px) {
@@ -199,6 +211,7 @@ section {
     .form-content {
         margin-bottom: 0;
         margin-top: 30px;
+        position: relative;
     }
     .form {
         margin-top: -20px;
@@ -223,27 +236,30 @@ section {
         display: flex;
         justify-content: center;
     }
-    img {
-        width: 350px;
-    }
-    .form-content::before {
-        display: none;
-    }
-    .form-content::after {
-        bottom: -80px;
-        right: -20px;
-        width: 690px;
-        height: 225px;
-        left: -152px;
-        filter: blur(60px);
-        z-index: -1;
-        opacity: 0.9;
-        background: linear-gradient(180deg, #528dff 0%, #2a73ff 33.06%, #0041be 100%);
-    }
+
     .form h3 {
         font-size: 28px;
     }
     .form p {
         margin-bottom: 15px;
+    }
+    .overlay::before {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 250px;
+    }
+    .overlay::after {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 250px;
+    }
+    .overlay {
+        overflow: visible;
     }
 }
